@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Incluir Produto{% endblock %}
+
+{% block content %}
+
+<main>
+    {% for message in get_flashed_messages() %}
+    <div class="alert-error">{{ message }}</div>
+    {% endfor %}
+    <form class="form-container" method="POST">
+        <div class="form-element">
+            <label for="name">Nome</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div class="form-element">
+            <label for="description">Descrição</label>
+            <input type="text" name="description" id="description">
+        </div>
+        <div class="form-element">
+            <label for="value">Valor</label>
+            <input type="number" name="value" id="value" step="0.01">
+        </div>
+        <div class="form-element">
+            <label for="available">Disponível para venda</label>
+            <select name="available" id="available">
+                <option value="S">Sim</option>
+                <option value="N">Não</option>
+            </select>
+        </div>
+        <button class="btn btn-1">Salvar</button>
+        <a class="btn btn-2" href="/">Cancelar</a>
+    </form>
+</main>
+
+{% endblock %}

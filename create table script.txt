@@ -1,0 +1,8 @@
+CREATE TABLE public.products (
+	id serial4 NOT NULL,
+	"name" varchar NOT NULL,
+	description varchar NOT NULL,
+	value float4 NOT NULL,
+	available bool NULL DEFAULT false,
+	CONSTRAINT products_pk PRIMARY KEY (id)
+);

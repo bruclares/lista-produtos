@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} - Pão & Prosa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="container">
+    <header>
+        <img class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo da empresa Pão & Prosa"
+            height="100px">
+    </header>
+    {% block content %} {% endblock %}
+</body>
+
+</html>

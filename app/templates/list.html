@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Produtos{% endblock %}
+
+{% block content %}
+
+<nav class="navbar">
+    <a class="btn btn-1" href="/incluir">Novo</a>
+</nav>
+<main>
+    <table class="table">
+        <tr>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Disponível para venda</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product['name'] }}</td>
+            <td>{{ product['value'] }}</td>
+            <td>{{ 'Sim' if product['available'] else 'Não'}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</main>
+{% endblock %}
