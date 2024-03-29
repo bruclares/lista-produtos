@@ -14,6 +14,7 @@
             <th>Valor</th>
             <th>Disponível para venda</th>
         </tr>
+        {% if products %}
         {% for product in products %}
         <tr>
             <td>{{ product['name'] }}</td>
@@ -21,6 +22,11 @@
             <td>{{ 'Sim' if product['available'] else 'Não'}}</td>
         </tr>
         {% endfor %}
+        {% else %}
+        <tr>
+            <td colspan="3">Sem registros cadastrados!</td>
+        </tr>
+        {% endif %}
     </table>
 </main>
 {% endblock %}
